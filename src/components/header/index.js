@@ -91,6 +91,7 @@ export const Header = () => {
               {/* PRIDE LOGO */}
               {true && <img src="/hen-pride.gif" alt="pride 2021" />}
             </div>
+               HECTIC NUN
           </a>
 
           <div className={styles.right}>
@@ -117,18 +118,18 @@ export const Header = () => {
                   <ul>
                     <li>
                       <Button onClick={() => handleRoute('/')}>
-                        <Primary>home</Primary>
+                        <Primary>HECTIC FEED</Primary>
                       </Button>
                     </li>
-                    <li>
-                      <Button onClick={() => handleRoute('/galleries')}>
-                        <Primary>galleries</Primary>
-                      </Button>
-                    </li>
+//                     <li> // GOOD RIDDANCE TO THIS
+//                       <Button onClick={() => handleRoute('/galleries')}>
+//                         <Primary>galleries</Primary>
+//                       </Button>
+//                     </li>
                     <li>
                       <Button onClick={() => handleRoute('/mint')}>
                         <Primary>
-                          OBJKT<span style={{ fontSize: '16px' }}> (mint)</span>
+                          MINTY MINTY HERE</span>
                         </Primary>
                       </Button>
                     </li>
@@ -139,7 +140,7 @@ export const Header = () => {
                     </li> */}
                     <li>
                       <Button onClick={() => handleRoute('/sync')}>
-                        <Primary>manage assets</Primary>
+                        <Primary>CHECK YER BAGS</Primary>
                       </Button>
                     </li>
                     { context.acc?.address ?
@@ -153,12 +154,12 @@ export const Header = () => {
                     }
                     <li>
                       <Button onClick={() => handleRoute('/about')}>
-                        <Primary>about</Primary>
+                        <Primary>ABOuT NUN</Primary>
                       </Button>
                     </li>
                     <li>
                       <Button onClick={() => handleRoute('/faq')}>
-                        <Primary>faq</Primary>
+                        <Primary>FAQ</Primary>
                       </Button>
                     </li>
                   </ul>
