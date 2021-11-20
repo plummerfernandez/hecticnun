@@ -26,7 +26,7 @@ export class About extends Component {
       <Page title="about" large>
         <Container>
           <Padding>
-            <strong>hic et nunc</strong>
+            <strong>HECTIC NUN IS A GLITCHY MIRROR OF HEN, USE AT YOUR OWN RISK U MAD PPL. A project by M PLUMMER-FERNANDEZ</strong>
           </Padding>
         </Container>
 
@@ -51,41 +51,41 @@ export class About extends Component {
         <Container>
           <Padding>
             <div className={styles.buttons}>
-              <p>Join or contact hic et nunc on</p>
+              <p>preferably do not DM </p>
               &nbsp;
-              <Button href="https://hicetnunc2000.medium.com">
+              <Button href="https://twitter.com/m_PF">
                 <Primary>
-                  <strong>medium</strong>
+                  <strong>M_PF on twitter</strong>
                 </Primary>
               </Button>
               <p>,</p>&nbsp;
-              <Button href="mailto:hicetnunc2000@protonmail.com">
+              <Button href="mailto:">
                 <Primary>
-                  <strong>email</strong>
+                  <strong>sorry, no snail-mail</strong>
                 </Primary>
               </Button>
               <p>,</p>&nbsp;
-              <Button href="https://discord.gg/W8vQ7REym7">
+              <Button href="https://hecticnun.xyz/objkt/365628">
                 <Primary>
-                  <strong>discord</strong>
+                  <strong>Glitch Manifesto by Rosa Menkman</strong>
                 </Primary>
               </Button>
               <p>,</p>&nbsp;
-              <Button href="https://reddit.com/r/hicetnunc">
+              <Button href="https://hecticnun.xyz/objkt/365628">
                 <Primary>
-                  <strong>reddit</strong>
+                  <strong>more reading coming soon </strong>
                 </Primary>
               </Button>
               <p>,</p>&nbsp;
-              <Button href="https://t.me/hicetnunc2000">
+              <Button href="https://hecticnun.xyz/objkt/365628">
                 <Primary>
-                  <strong>telegram</strong>
+                  <strong>placeholder</strong>
                 </Primary>
               </Button>
-              &nbsp;or through our
-              <Button href="https://community.hicetnunc.xyz">
+              &nbsp;blabla
+              <Button href="https://hecticnun.xyz/objkt/365628">
                 <Primary>
-                  <strong>&nbsp;community forum</strong>
+                  <strong>&nbsp;put stuff here later</strong>
                 </Primary>
               </Button>.
             </div>
@@ -95,10 +95,10 @@ export class About extends Component {
         <Container>
           <Padding>
             <div className={styles.buttons}>
-              <p>WIKI is available on</p>&nbsp;
-              <Button href="https://github.com/hicetnunc2000/hicetnunc/wiki">
+              <p>stop reading already////////////////////</p>&nbsp;
+              <Button href="https://hecticnun.xyz/objkt/365628">
                 <Primary>
-                  <strong>github</strong>
+                  <strong>EmbRACE HECTIC </strong>
                 </Primary>
               </Button>
             </div>
@@ -106,15 +106,15 @@ export class About extends Component {
         </Container>
         <Container>
           <Padding>
-            <Button href="https://github.com/hicetnunc2000/hicetnunc/wiki/Tools-made-by-the-community">
+            <Button href="https://hecticnun.xyz/objkt/365628">
               <Primary>
-                <strong>Community tools</strong>
+                <strong>asda123;asdlk;saldasddddddd</strong>
               </Primary>
             </Button>
             {false && (
-              <Button href="https://projects.stroep.nl/hicetnunc">
+              <Button href="https://hecticnun.xyz/objkt/365628">
                 <Primary>
-                  <strong>example tool2</strong>
+                  <strong>asdaadasddasdassdaddd</strong>
                 </Primary>
               </Button>
             )}
@@ -125,9 +125,9 @@ export class About extends Component {
           <Padding>
             <div className={styles.buttons}>
               <p>Report</p>&nbsp;
-              <Button href="https://github.com/hicetnunc2000/hicetnunc/issues">
+              <Button href="https://hecticnun.xyz/objkt/365628">
                 <Primary>
-                  <strong>issues</strong>
+                  <strong>tissues</strong>
                 </Primary>
               </Button>
             </div>
