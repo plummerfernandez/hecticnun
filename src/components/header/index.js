@@ -121,11 +121,11 @@ export const Header = () => {
                         <Primary>HECTIC FEED</Primary>
                       </Button>
                     </li>
-//                     <li> // GOOD RIDDANCE TO THIS
-//                       <Button onClick={() => handleRoute('/galleries')}>
-//                         <Primary>galleries</Primary>
-//                       </Button>
-//                     </li>
+                     <li> // GOOD RIDDANCE TO THIS
+                       <Button onClick={() => handleRoute('/about')}>
+                         <Primary><span style={{ text-decoration-line: line-through; }}> galleries</span></Primary>
+                       </Button>
+                     </li>
                     <li>
                       <Button onClick={() => handleRoute('/mint')}>
                         <Primary>
@@ -140,7 +140,7 @@ export const Header = () => {
                     </li> */}
                     <li>
                       <Button onClick={() => handleRoute('/sync')}>
-                        <Primary>CHECK YER BAGS</Primary>
+                        <Primary>CHECk yER BaGS</Primary>
                       </Button>
                     </li>
                     { context.acc?.address ?
@@ -159,7 +159,7 @@ export const Header = () => {
                     </li>
                     <li>
                       <Button onClick={() => handleRoute('/faq')}>
-                        <Primary>FAQ</Primary>
+                        <Primary>NUN PRAYERS ANSWERED</Primary>
                       </Button>
                     </li>
                   </ul>
