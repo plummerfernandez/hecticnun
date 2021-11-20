@@ -129,7 +129,7 @@ export const Header = () => {
                     <li>
                       <Button onClick={() => handleRoute('/mint')}>
                         <Primary>
-                          MINTY MINTY HERE</span>
+                          MINTY HERE
                         </Primary>
                       </Button>
                     </li>
