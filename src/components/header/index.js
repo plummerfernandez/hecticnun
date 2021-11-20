@@ -123,7 +123,7 @@ export const Header = () => {
                     </li>
                      <li> // GOOD RIDDANCE TO THIS
                        <Button onClick={() => handleRoute('/about')}>
-                         <Primary><span style={{ text-decoration-line: line-through; }}> galleries</span></Primary>
+                         <Primary>FKA G...</Primary>
                        </Button>
                      </li>
                     <li>
