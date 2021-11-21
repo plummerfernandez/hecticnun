@@ -121,11 +121,13 @@ export const Header = () => {
                         <Primary>HECTIC FEED</Primary>
                       </Button>
                     </li>
+                    {/*
                      <li> // GOOD RIDDANCE TO THIS
                        <Button onClick={() => handleRoute('/about')}>
                          <Primary>FKA G...</Primary>
                        </Button>
                      </li>
+                   */}
                     <li>
                       <Button onClick={() => handleRoute('/mint')}>
                         <Primary>
@@ -133,11 +135,11 @@ export const Header = () => {
                         </Primary>
                       </Button>
                     </li>
-{/*                     <li>
+                     <li>
                       <Button onClick={() => handleRoute('/collaborate')}>
                         <Primary>collaborate</Primary>
                       </Button>
-                    </li> */}
+                    </li> 
                     <li>
                       <Button onClick={() => handleRoute('/sync')}>
                         <Primary>CHECk yER BaGS</Primary>
