@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { Button, Secondary } from "../../../components/button"
 import { } from '../../media-types/'
 import styles from '../styles.module.scss'
@@ -6,56 +6,24 @@ import inputStyles from '../../../components/input/styles.module.scss'
 import { CloseIcon } from '../'
 import classNames from "classnames"
 import { GetUserMetadata } from "../../../data/api"
-import { validAddress, resolveTezosDomain } from "../functions"
 
 export const CollaboratorRow = ({ collaborator, onUpdate, onAdd, onRemove, onPasteMulti, minimalView, onEdit }) => {
 
     const [meta, setMeta] = useState()
     const [address, setAddress] = useState(collaborator.address)
-
-    // TODO: implement .tez address resolution
-    // const [tezAddress, setTezAddress] = useState(collaborator.tezAddress)
-
     const [shares, setShares] = useState(collaborator.shares)
-    const sharesRef = useRef()
 
     useEffect(() => {
         const { address, shares } = collaborator
 
-        // if (/^.*\.tez$/.test(address)) {
-        //     resolveTezosDomain(address).then(resolvedAddress => {
-        //         if (resolvedAddress) {
-        //             setAddress(resolvedAddress)
-        //         }
-        //     })
-        // } else {
-        //     setAddress(address)
-        // }
+        if (!meta && address) {
+            GetUserMetadata(address)
+            .then(({ data }) => setMeta(data))
+        }
+
         setAddress(address)
         setShares(shares)
-
-    }, [collaborator])
-
-    useEffect(() => {
-        const isValid = validAddress(address)
-
-        if (isValid && !shares && sharesRef.current) {
-            sharesRef.current.focus();
-        }
-
-        if (isValid) {
-            console.log("valid address, checking meta", meta, address)
-            if (!meta || (meta && meta.tzprofile !== address)) {
-                GetUserMetadata(address)
-                    .then(({ data }) => {
-                        console.log("Data from user meta query", data)
-                        setMeta(data)
-                    })
-            }
-        } else {
-            setMeta()
-        }
-    }, [address, shares])
+    }, [collaborator, meta])
 
     const _update = (field, value) => {
 
@@ -86,7 +54,7 @@ export const CollaboratorRow = ({ collaborator, onUpdate, onAdd, onRemove, onPas
 
     const collaboratorName = meta ? meta.alias : null
     const placeholderText = collaboratorName || `address ${!address ? `(tz... or KT...)` : ''}`
-
+    
     /**
      * In some situations we may want to show less UI information
      * eg. when adding benefactors, you don't need the whole
@@ -95,7 +63,7 @@ export const CollaboratorRow = ({ collaborator, onUpdate, onAdd, onRemove, onPas
     return minimalView ? (
         <tr className={styles.row} onClick={onEdit}>
             <td className={styles.cellWithPadding}>
-                {collaboratorName && <p>{collaboratorName}</p>}
+                { collaboratorName && <p>{collaboratorName}</p> }
                 <span>{address}</span>
             </td>
             <td className={styles.cellWithPadding}>{collaborator.shares} shares</td>
@@ -113,7 +81,7 @@ export const CollaboratorRow = ({ collaborator, onUpdate, onAdd, onRemove, onPas
                             value={address || ''}
                             autoFocus={!address}
                         />
-                        <p>{placeholderText}</p>
+                        <p>{ placeholderText }</p>
                     </label>
                 </div>
             </td>
@@ -122,13 +90,13 @@ export const CollaboratorRow = ({ collaborator, onUpdate, onAdd, onRemove, onPas
                 <div className={cellClass}>
                     <label>
                         <input
-                            ref={sharesRef}
                             type="number"
                             onChange={event => _update('shares', event.target.value)}
                             onKeyDown={_onKeyDown}
                             placeholder="shares"
                             label="shares"
                             value={shares || ''}
+                            autoFocus={address && !shares}
                         />
                         <p>shares</p>
                     </label>
