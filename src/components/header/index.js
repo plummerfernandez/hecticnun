@@ -91,7 +91,7 @@ export const Header = () => {
               {/* PRIDE LOGO */}
               {false && <img src="/hen-pride.gif" alt="pride 2021" />}
             </div>
-            HECTIC NUN 
+            <p>HECTIC NUN</p> 
           </Button>
 
           <div className={styles.right}>
