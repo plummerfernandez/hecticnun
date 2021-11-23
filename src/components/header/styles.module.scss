@@ -6,8 +6,8 @@
   width: 100%;
   height: 60px;
   padding: 0 #{$mobile-padding};
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #6a0dad;
+  color: #ffffff;
   transition: background-color #{$theme-duration} ease-out,
     color #{$theme-duration} ease-out;
   z-index: 1000;
