@@ -8,12 +8,12 @@
   word-break: break-word;
 
   @include respond-to('desktop') {
-    width: 60%;
+    width: 50%;
   }
 
   &.large {
     @include respond-to('desktop') {
-      width: 65%;
+      width: 55%;
     }
   }
 

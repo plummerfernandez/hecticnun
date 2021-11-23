@@ -63,6 +63,12 @@
   }
 }
 
+.mr {
+  padding-right: 10px;
+  border-right: 1px solid var(--border-color);
+  margin-right: 10px;
+}
+
 .menu {
   position: fixed;
   top: 60px;
@@ -80,11 +86,11 @@
     justify-content: flex-end;
 
     ul {
-      margin-top: 70px;
+      margin-top: 100px;
       list-style: none;
 
       li {
-        font-size: 25px;
+        font-size: 30px;
         text-align: right;
 
         /*         &:first-of-type {

@@ -36,7 +36,7 @@ export const Header = () => {
   if (context.acc?.address) {
     // is menu closed?
     if (context.collapsed) {
-      const proxyAddress = context.proxyAddress ? ' (' + context.proxyAddress + ')' : ''
+      const proxyAddress = context.proxyAddress ? ` (${context.proxyName || walletPreview(context.proxyAddress)})` : ''
       button = walletPreview(context.acc.address) + proxyAddress
     } else {
       // menu is open
@@ -65,7 +65,7 @@ export const Header = () => {
     <>
       <header className={styles.container}>
         <div className={styles.content}>
-          <a href='/'>
+          <Button onClick={() => handleRoute('/')}>
             <div className={styles.logo}>
               {/* HIC LOGO */}
               {false && (
@@ -91,12 +91,20 @@ export const Header = () => {
               {/* PRIDE LOGO */}
               {false && <img src="/hen-pride.gif" alt="pride 2021" />}
             </div>
-               HECTIC NUN
-          </a>
+            HECTIC NUN 
+          </Button>
 
           <div className={styles.right}>
+            {!context.collapsed && context.proxyAddress && (
+              <div className={styles.mr}>
+                <Button onClick={() => context.setProxyAddress(null)} secondary>
+                  <Primary>exit collab</Primary>
+                </Button>
+              </div>
+            )}
+
             <Button onClick={handleSyncUnsync} secondary>
-              <Primary>{button}</Primary>
+              <Primary>{button}</Primary> {/* Main address display here */}
             </Button>
 
             <Button onClick={context.toogleNavbar} secondary>
@@ -117,40 +125,31 @@ export const Header = () => {
                 <nav className={styles.content}>
                   <ul>
                     <li>
-                      <Button onClick={() => handleRoute('/')}>
+                      <Button onClick={() => handleRoute('/explore')}>
                         <Primary>HECTIC FEED</Primary>
                       </Button>
                     </li>
-                    {/*
-                     <li> // GOOD RIDDANCE TO THIS
-                       <Button onClick={() => handleRoute('/about')}>
-                         <Primary>FKA G...</Primary>
-                       </Button>
-                     </li>
-                   */}
                     <li>
                       <Button onClick={() => handleRoute('/mint')}>
                         <Primary>
-                          MINTY HERE
+                          MINT AN ART
                         </Primary>
                       </Button>
                     </li>
-                    {/*
-                     <li>
-                      <Button onClick={() => handleRoute('/collaborate')}>
-                        <Primary>collaborate</Primary>
-                      </Button>
-                    </li> 
-                  */} 
                     <li>
-                      <Button onClick={() => handleRoute('/sync')}>
-                        <Primary>CHECk yER BaGS</Primary>
+                      <Button onClick={() => handleRoute('/collaborate')}>
+                        <Primary>COLLABORATE *EXPERIMENTAL</Primary>
                       </Button>
                     </li>
-                    { context.acc?.address ?
+                    <li>
+                      <Button onClick={() => handleRoute('/sync')}>
+                        <Primary>CHECK YOUR BAGS</Primary>
+                      </Button>
+                    </li>
+                    {context.acc?.address ?
                       <li>
                         <Button onClick={() => handleRoute('/config')}>
-                          <Primary>edit profile</Primary>
+                          <Primary>EDIT PROFILES</Primary>
                         </Button>
                       </li>
                       :
@@ -158,7 +157,7 @@ export const Header = () => {
                     }
                     <li>
                       <Button onClick={() => handleRoute('/about')}>
-                        <Primary>ABOuT NUN</Primary>
+                        <Primary>ABOUT NUN</Primary>
                       </Button>
                     </li>
                     <li>
